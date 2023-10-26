@@ -1,0 +1,41 @@
+Algoritmo "CondicaoExisTriangulo"
+
+Var
+// Seção de Declarações das variáveis 
+ x, y, z : real
+ EQ, ES, RE: logico
+
+Inicio
+// Seção de Comandos, procedimento, funções, operadores, etc... 
+ escreva ("Digite um lado: ")
+ leia (x)
+ escreva ("Digite outro lado: ")
+ leia (y)
+ escreva ("Digite mais um lado: ")
+ Leia (z)
+           
+ EQ <- (x = y) e (y = z)
+ ES <- (x <> y) e (y <> z) e (x <> z)
+ RE <- x ^ 2 = y ^ 2 + z ^ 2
+       
+ se EQ = true  e RE = false  entao
+        escreva ( "Triangulo Equilatero")
+
+ fimse
+
+ se ES = true  e RE = false   entao
+   escreva ("Triangulo Escaleno")
+     senao ES = true e RE = true entao
+        escreva ("Triangulo Retangulo")
+ fimse
+ 
+ se ES = false e EQ = false e RE = true entao
+   escreva ("Triangulo Retangulo Isoceles")
+   senão escreva ("Triangulo Isoceles")
+ fimse
+ 
+ se ES = false e EQ = false e RE = false entao
+   escreva ("Não temos triangulo com esses pontos")
+ fimse
+
+Fimalgoritmo
