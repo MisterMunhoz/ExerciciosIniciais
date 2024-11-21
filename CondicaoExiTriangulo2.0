@@ -1,0 +1,61 @@
+Algoritmo "Triangulo"
+Var
+    // Seção de Declarações das variáveis 
+    x, y, z : real
+    EQ, ES, RE: logico
+    tipo: inteiro
+
+Inicio
+    // Seção de Comandos
+    escreva ("Digite um lado: ")
+    leia (x)
+    escreva ("Digite outro lado: ")
+    leia (y)
+    escreva ("Digite mais um lado: ")
+    leia (z)
+    
+    // Determinação das condições
+    EQ <- (x = y) e (y = z)
+    ES <- (x <> y) e (y <> z) e (x <> z)
+    RE <- x ^ 2 = y ^ 2 + z ^ 2
+    
+    // Determinação do tipo de triângulo
+    se EQ = true e RE = false entao
+        tipo <- 1 // Triângulo Equilátero
+    senao
+        se ES = true e RE = false entao
+            tipo <- 2 // Triângulo Escaleno
+        senao
+            se ES = true e RE = true entao
+                tipo <- 3 // Triângulo Escaleno Retângulo
+            senao
+                se ES = false e EQ = false e RE = true entao
+                    tipo <- 4 // Triângulo Retângulo Isósceles
+                senao
+                    se ES = false e EQ = false e RE = false entao
+                        tipo <- 5 // Não é um triângulo
+                    senao
+                        tipo <- 6 // Triângulo Isósceles
+                    fimse
+                fimse
+            fimse
+        fimse
+    fimse
+    
+    // Exibição do resultado com "caso"
+    escolha tipo
+        caso 1:
+            escreva ("Triângulo Equilátero")
+        caso 2:
+            escreva ("Triângulo Escaleno")
+        caso 3:
+            escreva ("Triângulo Escaleno Retângulo")
+        caso 4:
+            escreva ("Triângulo Retângulo Isósceles")
+        caso 5:
+            escreva ("Não é um triângulo com esses pontos")
+        caso 6:
+            escreva ("Triângulo Isósceles")
+    fimescolha
+
+Fimalgoritmo
