@@ -1,0 +1,31 @@
+import java.util.*; //pacote importado
+public class Treino{  //classe principal, onde o programa vai rodar. Ela é publica
+    public static void main(String[] args){   //metodo princial, corpo da aplicação
+        
+        int x, y, z; //declação de variaveis
+        Scanner Input = new Scanner(System.in); /* itens utilizado dentro de um pacote (no caso é o java.util), importamos entrada por
+        teclado */ 
+        
+        System.out.println("Escreva um numero "); //o que se espera que seja escrito
+        x = Input.nextInt();                      //recepação do que que foi escrito na variavel
+        System.out.println ("Escreva outro numero ");
+        y = Input.nextInt();
+        
+        z = (x + y)/3;                          // operação escolhida, não ouve criterios
+        System.out.println ("O valor inteiro de z é: " + z); //exibir o resultado da operação
+        
+        if ( z % 2 ==0 ){                        //instrução de desvio, veriifca se é par
+            System.out.println (" O numero  " + z + " é par e divisivel por 2" );
+        } else {                                // condicional para outra alternativa
+                      switch (z % 3) {         // testar casos para varias respostas
+                case 1:                       //primeiro caso
+                    System.out.println(" O resto da divisão de " + z + " e 3 é diferente de zero não sendo divisivel por 3");
+                    break;
+                case 2:                       //primeiro caso
+                    System.out.println(" O resto da divisão de " + z + " e 3 é diferente de zero não sendo divisivel por 3");
+                    break;
+                default:                    //caso final, usado depois de eliminar tudo
+                    System.out.println ("Divisivel por 3");
+                    break;
+                }
+            }
