@@ -1,0 +1,51 @@
+ import java.util.*;
+ /*  Exercicio: Criar um mini validador de senha, caso seja escrito errado mais de cinco vezes o programa 
+ finaliza  */
+ 
+ public class Treino4{
+     public static void main(String[] args){
+         
+        String Password = "Hercules", NewPassword;
+        int i;
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("Digite a senha");
+        NewPassword = input.nextLine(); //quando usar scanner para strings, devesse usar .nextLine()
+        
+        if (NewPassword.equals(Password)) { //o metodo .equals() compara duas strings
+           System.out.println("Senha correta"); 
+           
+        } else { //alternativa
+            do {
+                
+                System.out.println("Senha incorreta. Digite a senha correta: ") ;
+                System.out.println("Dica: Filho adotivo de Anfitrião");
+                 NewPassword = input.nextLine();
+                 
+                 for(i = 1; i < 5; i++) { //atenção com a instrução do 'for'
+                     
+                     if (NewPassword.equals(Password)) { // Se a senha estiver correta, sai do loop
+                        System.out.println("Senha correta!");
+                        break;
+                        
+                     } else if ( i < 4){ // Se ainda houver tentativas restantes, pede para tentar novamente
+                        System.out.println("Senha incorreta. Tente novamente:");
+                        System.out.println("Dica: Filho adotivo de Anfitrião");
+                        NewPassword = input.nextLine();
+                    }
+                }
+                     
+                     if (i == 5){
+                         
+                         System.out.println ("Numero maximo de tentativas alcançadas. Sinto Muito, acesso negado");
+                     break;
+                    }
+                 
+                 
+              } while (!NewPassword.equals(Password)); //caso não ache a resposta, volta ao começo
+            }
+             
+      input.close(); // Fecha o scanner para evitar vazamento de recursos
+        
+     }
+}
